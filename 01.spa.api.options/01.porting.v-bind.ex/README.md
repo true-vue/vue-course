@@ -1,6 +1,6 @@
 # 01.porting.v-bind.ex
 
-This project demonstrates simply porting in-browser v-bind excercise progress bar component into SPA component. Primary commit demonstrates porting component "logic" to root component. Second commit demonstrates components reusability (including defining props for components).
+This project demonstrates simply porting in-browser v-bind excercise progress bar component into SPA component. Primary commit demonstrates porting component "logic" to root component. Next commits demonstrate components reusability (including defining props for components).
 
 ## Recommended IDE Setup
 

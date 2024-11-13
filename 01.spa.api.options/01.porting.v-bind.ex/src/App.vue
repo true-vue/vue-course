@@ -1,59 +1,24 @@
 <template>
-  <div class="wrapper">
-    <div
-      class="progress"
-      role="progressbar"
-      aria-label="Success example"
-      aria-valuenow="progress"
-      aria-valuemin="0"
-      aria-valuemax="100"
-      style="height: 50px"
-    >
-      <div
-        class="progress-bar"
-        :class="[progressCss]"
-        :style="{
-          width: `${progress}%`,
-          transition: `width ${stepDuration}ms ease`,
-        }"
-      >
-        {{ progress }}%
-      </div>
-    </div>
-    <button @click="start()" class="btn btn-dark mt-2">START</button>
-  </div>
+  <!-- when embeding components here are possible syntax alternatives:  -->
+  <!-- lower case with hypens explicit closing tag: RECOMMENED for both SPA nad in-broser modes  -->
+  <progress-bar class="wrapper" style="width: 50%"></progress-bar>
+  <!-- lower case with hypens self closed tag - can be used in SPA but might not work in-browser -->
+  <progress-bar class="wrapper" style="width: 100%" />
+  <!-- pascal case with self closed tag - shortcut for SPA only -->
+  <ProgressBar class="wrapper" style="width: 75%" />
+  <!-- pascal case with explict closing tag - SPA only -->
+  <ProgressBar class="wrapper" style="width: 25%"></ProgressBar>
+  <!-- Plase notice style definition on components: because this componet has single root element (div) styles will be applied to inner component element. -->
 </template>
 
 <script>
+// component is declared in separate file and imported here
+import ProgressBar from './components/ProgressBar.vue'
+
 export default {
-  data() {
-    return {
-      timerId: null,
-      progress: 0,
-      stepDuration: 50,
-    }
-  },
-  computed: {
-    progressCss() {
-      return this.progress >= 21
-        ? this.progress >= 51
-          ? 'bg-danger'
-          : 'bg-warning text-dark'
-        : 'bg-dark'
-    },
-  },
-  methods: {
-    start() {
-      this.progress = 0
-      clearInterval(this.timerId)
-      this.timerId = setInterval(() => {
-        if (this.progress === 100) {
-          clearInterval(this.timerId)
-        } else {
-          this.progress++
-        }
-      }, this.stepDuration)
-    },
+  // for options api imported components have to be explicity declared inside options so that can exposed and used inside the template.
+  components: {
+    ProgressBar,
   },
 }
 </script>
