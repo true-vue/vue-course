@@ -12,4 +12,4 @@ Demonstrates single page aplication with options API for components. Also demons
 Additional info can be found in .md files in particular folders.
 
 # 02.spa.api.composition
-Demonstrates single page application with composition API for components. Composition API inside SFC (Single-File Components) is current standard for defining Vue components.
+Demonstrates single page application with composition API for components. Composition API inside SFC (Single-File Components) is current (2024) standard for defining Vue components.
