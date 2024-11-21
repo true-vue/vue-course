@@ -2,6 +2,12 @@
 
 This project demonstrates simply porting in-browser v-bind excercise progress bar component into SPA component declared with options API. Primary commit demonstrates porting component "logic" to root component. Next commits demonstrate components reusability (including defining props for components).
 
+About vue components (in general):
+https://vuejs.org/guide/essentials/component-basics.html
+
+About vue component props declaration:
+https://vuejs.org/guide/components/props
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
